@@ -1,4 +1,4 @@
 BreezeNoDBMetadataGenerator
 ===========================
 
-Metadata generator for BreezeJS with no database, non EF ORM or non 1:1 entity mapping scenarios
+Metadata generator for BreezeJS to use with no database, non EF ORM or EF with DTO
