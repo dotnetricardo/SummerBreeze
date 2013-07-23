@@ -31,7 +31,7 @@
                 autoSave();
             }
 
-            this.prototype.generate = function () {
+            generator.prototype.generate = function () {
                 return run();
             }
 
