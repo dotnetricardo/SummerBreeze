@@ -1,10 +1,10 @@
-﻿window.summerBreeze = (function ($, breeze) {
+window.summerBreeze = (function ($, breeze) {
 
-    var
-        manager = null,
+    $.checkCamel = function (text) {
+        return breeze.NamingConvention.defaultInstance.name === "camelCase" ? text.replace(text.charAt(0), text.charAt(0).toLowerCase()) : text;
+    };
 
-        store = null, 
-
+    var 
         generator = function (obj) {
 
             var defaults = {
@@ -15,13 +15,17 @@
             obj = $.extend(obj, defaults);
 
             var service = new breeze.DataService({
-                serviceName: obj.serviceName,
+                serviceName: obj.service,
                 hasServerMetadata: false // don't ask the server for metadata
             });
 
-            manager = new breeze.EntityManager({ dataService: service });
+            var manager = new breeze.EntityManager({ dataService: service });
 
-            store = manager.metadataStore;
+            generator.prototype.manager = manager;
+
+            var store = manager.metadataStore;
+
+            generator.prototype.store = store;
 
             if (obj.enableQueing) {
                 manager.enableSaveQueuing(obj.enableQueing);
@@ -32,7 +36,7 @@
             }
 
             generator.prototype.generate = function () {
-                return run();
+                return run(service.serviceName, store);
             }
 
         },
@@ -43,13 +47,15 @@
                     var entity = args.entity;
                     if (entity.entityAspect.entityState.isModified()) {
                         return manager.saveChanges();
-                       
+
                     }
                 }
             });
         },
 
-        run = function () {
+        run = function (serviceName, store) {
+
+            var metadataUri = serviceName + 'summerbreezemetadata';
 
             return $.Deferred(function (def) {
 
@@ -110,15 +116,11 @@
         };
 
     return {
-        generator: generator,
-        manager: manager,
-        store: store
+        generator: generator
     }
 
-    $.checkCamel = function (text) {
-        return breeze.NamingConvention.defaultInstance.name === "camelCase" ? text.replace(text.charAt(0), text.charAt(0).toLowerCase()) : text;
-    };
 
 
-}(jQuery, breeze));
+
+} (jQuery, breeze));
 
