@@ -6,7 +6,7 @@ Metadata library and client-side entity generation script for BreezeJS for no DB
 
 Instructions 
 ===========================
-***
+
 
 <h3>Getting metadata and creating entities:</h3>
 <p><b>On the server-side of things:</b></p>
