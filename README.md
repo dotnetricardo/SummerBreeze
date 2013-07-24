@@ -166,6 +166,6 @@ if (mgr.hasChanges()) {
 
 
 
-Comming soon
+Coming soon
 ===========================
 Commiting a demo solution to the repository.
