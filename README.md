@@ -166,6 +166,6 @@ if (mgr.hasChanges()) {
 
 
 
-Coming soon
+Demo 
 ===========================
-Commiting a demo solution to the repository.
+Check out the demo solution in the repo to see SummerBreeze in action.
