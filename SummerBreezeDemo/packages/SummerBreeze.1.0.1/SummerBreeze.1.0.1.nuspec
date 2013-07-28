@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SummerBreeze</id>
+    <version>1.0.1</version>
+    <title>SummerBreeze</title>
+    <authors>dotnetricardo</authors>
+    <owners>dotnetricardo</owners>
+    <projectUrl>https://github.com/dotnetricardo/SummerBreeze</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>By using SummerBreeze, the manual entity creation process that is commonly used to add entities to the Breeze EntityManager metadatastore on no DB, no EF ORM or EF ORM with DTO scenarios  is minimized. SummerBreeze generates all the metadata that is needed to self-describe your POCOS´s for automatic entity generation on the client side.</description>
+    <summary>Metadata generator library and entity creation client script to use with BreezeJS for no DB, no EF ORM or EF ORM with DTO scenarios (non 1:1 entity mappings).</summary>
+    <releaseNotes>NOTE: This library is in a very early beta stage and some inconsistencies might still occur. Use it having that in mind and feel free to contribute with your ideas and pull requests for feature adding or bug fixes at the project github site.</releaseNotes>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Newtonsoft.Json" version="5.0.6" />
+        <dependency id="Ninject" version="3.0.1.10" />
+        <dependency id="Breeze.WebApi" version="1.3.6" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

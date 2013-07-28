@@ -1,0 +1,66 @@
+﻿<section style="margin: 100px 0 0 250px">
+    <div class="label label-info">This section tries to show the coexistence between summerbreeze DTOs and breeze DB objects.</div>
+    <div class="label label-important">You can create a product using a DTO or a DB object.</div>
+    <div>
+        <h2 class="page-title" style="margin-top: 20px;">Add Product</h2>
+        <span>(using DTO object)</span></div>
+    <div class="navbar-form pull-left">
+        <div class="row">
+            <div class="span4">
+                <input type="text" class="form-control" style="width: 200px;" placeholder="Product Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <input type="text" class="form-control" style="width: 200px;" placeholder="Picture Url">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <div class="input-append">
+                    <input class="span2" id="appendedInput" type="text" placeholder="Price" maxlength="4">
+                    <span class="add-on">.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <button type="submit" id="addBtnDTO" class="btn btn-default" style="width: 210px;">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-form pull-left" style="margin-top: -75px;">
+        <div class="row">
+            <div class="span4">
+                <h2 class="page-title">Add Product</h2>
+                <span>(using DB object)</span>
+                <br />
+                <input type="text" class="form-control" style="width: 200px;" placeholder="Product Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <input type="text" class="form-control" style="width: 200px;" placeholder="Picture Url">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <input type="text" class="form-control" style="width: 200px;" placeholder="Tags">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <div class="input-append">
+                    <input class="span2" id="Text1" type="text" placeholder="Price" maxlength="4">
+                    <span class="add-on">.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <button type="submit" id="addBtnDB" class="btn btn-default" style="width: 210px;">Add</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+﻿<section style="margin: 100px 0 0 300px">
+    <div class="label label-info">This section only uses DTOs automatically created by SummerBreeze.</div>
+    <div class="label label-important">Try searching for nokia surface samsung or a product you created.</div>
+    <h2 class="page-title">Search Product</h2>
+    <div class="row">
+        <div class="span12">
+            <div class="navbar-form pull-left">
+                <input type="text" id="searchBox" class="span4" style="height: 35px;">
+                <button type="submit" id="searchBtn" class="btn btn-large btn-primary" style="margin-top: 5px;">Search</button>
+                <span class="label" data-bind="visible: isVisible, text: results"></span>
+            </div>
+        </div>
+    </div>
+    <div style="margin: 50px 0 0 0">
+        <ul class="thumbnails" data-bind="foreach: DTOProducts">
+            <li class="span4">
+                <div class="thumbnail" style="text-align: center;">
+                    <img data-bind="attr: { src: PicUrl, title: Name, alt: Name }" />
+                    <h3 data-bind="text: Name "></h3>
+                    <div class="label label-info">$<span data-bind="text: Price"></span></div>
+                    <span class="label label-success" data-bind="text: SearchDate"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
