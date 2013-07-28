@@ -31,7 +31,7 @@ Instructions
             return true;
         }
 
-        public List<Breeze.WebApi.KeyMapping> SaveChanges(Dictionary<Type, List<Breeze.WebApi.EntityInfo>> saveMap)
+         public void SaveChanges(Breeze.WebApi.SaveWorkState saveWorkState)
         {
             //implement custom save changes here
             throw new NotImplementedException();
@@ -168,4 +168,4 @@ if (mgr.hasChanges()) {
 
 Demo 
 ===========================
-Check out the demo solution in the repo to see SummerBreeze in action.
+Check out the included SummerBreezeDemo solution in the repo to see it in action.
