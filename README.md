@@ -168,4 +168,4 @@ if (mgr.hasChanges()) {
 
 Demo 
 ===========================
-Check out the included SummerBreezeDemo solution in the repo to see it in action.
+Check out the included SummerBreezeDemo to see this library in action.
