@@ -13,6 +13,7 @@ namespace SummerBreeze
         public bool isScalar { get; set; }
         public string[] foreignKeyNames { get; set; }
         public string associationName { get; set; }
+        public string inverseProperty { get; set; }
        
     }
 }

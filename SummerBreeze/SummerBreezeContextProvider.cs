@@ -126,10 +126,11 @@ namespace SummerBreeze
                     navigationpropertyMetadataList.Add(new BreezeNavigationPropertyMetadata
                      {
                          name = i.Name,
-                         entityTypeName = i.PropertyType.Name,
+                         entityTypeName = i.PropertyType.GetGenericArguments().FirstOrDefault() == null ? i.PropertyType.Name : i.PropertyType.GetGenericArguments().FirstOrDefault().Name,
                          isScalar = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames.Count() > 0,
                          associationName = (nav as BreezeNavigationPropertyAttribute).Association,
                          foreignKeyNames = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames,
+                         inverseProperty = (nav as BreezeNavigationPropertyAttribute).InverseProperty
 
                      });
 
@@ -142,7 +143,7 @@ namespace SummerBreeze
                     datapropertyMetadataList.Add(new BreezeDataPropertyMetadata
                     {
                         name = i.Name,
-                        dataType = i.PropertyType.Name.Contains("Nullable") ? Nullable.GetUnderlyingType(i.PropertyType).Name : i.PropertyType.Name,
+                        dataType = i.PropertyType.Name.Contains("Nullable") ? Nullable.GetUnderlyingType(i.PropertyType).Name : i.PropertyType.GetGenericArguments().FirstOrDefault() == null ? i.PropertyType.Name : i.PropertyType.GetGenericArguments().FirstOrDefault().Name,
                         isNullable = i.PropertyType.IsGenericType && i.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>),
                         isPartOfKey = i.GetCustomAttributes(typeof(KeyAttribute), false) != null && i.GetCustomAttributes(typeof(KeyAttribute), false).Count() > 0,
                         isUnmapped = allUnmapped ? allUnmapped : i.GetCustomAttributes(typeof(BreezeUnmappedAttribute), false) != null && i.GetCustomAttributes(typeof(BreezeUnmappedAttribute), false).Count() > 0,

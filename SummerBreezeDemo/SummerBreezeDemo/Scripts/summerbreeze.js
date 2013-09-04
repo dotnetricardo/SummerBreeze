@@ -101,9 +101,17 @@ window.summerBreeze = (function ($, breeze) {
                 $(elem.navigationProperties).each(function (idx, el) {
                     el.name = $.checkCamel(el.name);
 
-                    el.foreignKeyNames = $.map(el.foreignKeyNames, function (e, i) {
-                        return $.checkCamel(e);
-                    });
+                    if (el.foreignKeyNames) {
+                        el.foreignKeyNames = $.map(el.foreignKeyNames, function (e, i) {
+                            return $.checkCamel(e);
+                        });
+                    } else {
+                        el.foreignKeyNames = [];
+                    }
+
+                    if (el.inverseProperty) {
+                        el.inverseProperty.name = el.inverseProperty;
+                    }
 
                     entityType.addProperty(new breeze.NavigationProperty(el));
                 });

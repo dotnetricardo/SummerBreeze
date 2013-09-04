@@ -258,10 +258,10 @@
     <Content Include="Scripts\q.min.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\summerbreeze.js" />
     <Content Include="Scripts\toastr-1.1.5.js" />
     <Content Include="Scripts\toastr-1.1.5.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Scripts\summerbreeze.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

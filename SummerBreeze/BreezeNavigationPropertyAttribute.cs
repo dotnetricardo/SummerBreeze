@@ -12,11 +12,13 @@ namespace SummerBreeze
 
         public string Association { get; private set; }
         public string[] ForeignKeyNames { get; private set; }
+        public string InverseProperty { get; private set; }
 
-        public BreezeNavigationPropertyAttribute(string association, params string[] foreignKeys)
+        public BreezeNavigationPropertyAttribute(string association, string inverseProperty = null, params string[] foreignKeys)
         {
             Association = association;
             ForeignKeyNames = foreignKeys;
+            InverseProperty = inverseProperty;
         }
     }
 }
