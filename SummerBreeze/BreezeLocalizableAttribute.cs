@@ -13,7 +13,9 @@ namespace SummerBreeze
         public string[] Include { get; private set; }
         public bool UnMapAll { get; private set; }
 
-        public BreezeLocalizableAttribute(bool unmapAll = false, params string[] include)
+        public BreezeLocalizableAttribute() : this(false) { }
+        
+        public BreezeLocalizableAttribute(bool unmapAll, params string[] include)
         {
             UnMapAll = unmapAll;
             Include = include;
