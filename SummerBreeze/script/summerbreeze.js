@@ -4,7 +4,7 @@ window.summerBreeze = (function ($, breeze) {
         return breeze.NamingConvention.defaultInstance.name === "camelCase" ? text.replace(text.charAt(0), text.charAt(0).toLowerCase()) : text;
     };
 
-    var 
+    var
         generator = function (obj) {
 
             var defaults = {
@@ -109,10 +109,6 @@ window.summerBreeze = (function ($, breeze) {
                         el.foreignKeyNames = [];
                     }
 
-                    if (el.inverseProperty) {
-                        el.inverseProperty.name = el.inverseProperty;
-                    }
-
                     entityType.addProperty(new breeze.NavigationProperty(el));
                 });
 
@@ -130,5 +126,5 @@ window.summerBreeze = (function ($, breeze) {
 
 
 
-} (jQuery, breeze));
+}(jQuery, breeze));
 

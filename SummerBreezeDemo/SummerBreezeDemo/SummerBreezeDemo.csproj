@@ -189,9 +189,12 @@
     <Compile Include="Datalayer\DTOContextProvider.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\DTO\ManufacturerDTO.cs" />
+    <Compile Include="Models\DTO\NeedInversePropertiesDTO.cs" />
     <Compile Include="Models\DTO\ProductDTO.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\DTO\TestDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

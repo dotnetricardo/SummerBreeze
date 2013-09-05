@@ -47,6 +47,12 @@ namespace SummerBreezeDemo.Controllers
           
         }
 
+        [AcceptVerbs("GET")]
+        public IQueryable<NeedInversePropertiesDTO> NeedInversePropertiesDTO()
+        {
+            return _summerBreezeContextProvider.Context.GetNeedInversePropertiesDTO().AsQueryable();
+        }
+
         [AcceptVerbs("Get")]
         public string Metadata() // this is the EF metadata (is called by breeze)
         {

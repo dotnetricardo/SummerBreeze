@@ -109,10 +109,6 @@ window.summerBreeze = (function ($, breeze) {
                         el.foreignKeyNames = [];
                     }
 
-                    if (el.inverseProperty) {
-                        el.inverseProperty.name = el.inverseProperty;
-                    }
-
                     entityType.addProperty(new breeze.NavigationProperty(el));
                 });
 

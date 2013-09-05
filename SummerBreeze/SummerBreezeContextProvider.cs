@@ -126,11 +126,11 @@ namespace SummerBreeze
                     navigationpropertyMetadataList.Add(new BreezeNavigationPropertyMetadata
                      {
                          name = i.Name,
-                         entityTypeName = i.PropertyType.GetGenericArguments().FirstOrDefault() == null ? i.PropertyType.Name : i.PropertyType.GetGenericArguments().FirstOrDefault().Name,
+                         entityTypeName = i.PropertyType.GetGenericArguments().FirstOrDefault() == null ? i.PropertyType.Name + ":#" + i.PropertyType.Namespace : i.PropertyType.GetGenericArguments().FirstOrDefault().Name + ":#" + i.PropertyType.GetGenericArguments().FirstOrDefault().Namespace,
                          isScalar = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames != null && (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames.Count() > 0,
                          associationName = (nav as BreezeNavigationPropertyAttribute).Association,
-                         foreignKeyNames = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames,
-                         inverseProperty = (nav as BreezeNavigationPropertyAttribute).InverseProperty
+                         foreignKeyNames = (nav as BreezeNavigationPropertyAttribute).ForeignKeyNames
+                       
 
                      });
 
