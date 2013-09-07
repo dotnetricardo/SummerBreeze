@@ -11,8 +11,7 @@
     var
         DTOProducts = ko.observableArray(),
         results = ko.observable(),
-        isVisible = ko.observable(false),
-        NeedInversePropertiesDTO = ko.observableArray(),
+        isVisible = ko.observable(false)
 
         vm = {
             activate: activate,
@@ -20,8 +19,7 @@
             viewAttached: viewAttached,
             DTOProducts: DTOProducts,
             results: results,
-            isVisible: isVisible,
-            NeedInversePropertiesDTO: NeedInversePropertiesDTO
+            isVisible: isVisible
         };
 
         //DTOProducts = ko.observableArray([{ Name: 'aaa', Price: '123', PicUrl: 'aaa' }]);
@@ -40,9 +38,8 @@
         //get summerbreeze to do its job
         generateEntities()
             .then(function () {
-                getNeedInversePropertiesDTO();
-                //primeChacheWithData()
-                //.then(wireUpEventHandler);
+                primeChacheWithData()
+                .then(wireUpEventHandler);
             });
 
     }
@@ -121,22 +118,6 @@
                 
 
     }
-
-    function getNeedInversePropertiesDTO() {
-        var
-            query = breezeconfig.entityQuery
-                    .from('NeedInversePropertiesDTO'),
-            generator = summerbreezeconfig.getOrCreateGenerator();
-
-
-        //clear cache to avoid duplicates
-        generator.manager.clear()
-
-        //now use summerbreeze manager and use it to fetch data from server
-        generator.manager.executeQuery(query)
-        .then(function (data) {
-
-        });
-    }
+    
     //#endregion
 });
