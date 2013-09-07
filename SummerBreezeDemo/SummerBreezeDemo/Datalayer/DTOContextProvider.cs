@@ -36,25 +36,6 @@ namespace SummerBreezeDemo.Datalayer
             return list;
         }
 
-
-        public List<NeedInversePropertiesDTO> GetNeedInversePropertiesDTO()
-        {
-            var list = new List<NeedInversePropertiesDTO>();
-
-            NeedInversePropertiesDTO dto = new NeedInversePropertiesDTO() { ObjectId = Guid.NewGuid(), Manufacturers = new List<ManufacturerDTO>(), Tests = new List<TestDTO>() };
-
-            for (int i = 0; i < 20; i++)
-            {
-                dto.Manufacturers.Add(new ManufacturerDTO { DtoId = Guid.NewGuid(), Name = "Manufacturer" + i, ObjectId = dto.ObjectId, NeedInversePropertiesDTO = dto });
-                dto.Tests.Add(new TestDTO { DtoId = Guid.NewGuid(), Name = "Test" + i, ObjectId = dto.ObjectId, NeedInversePropertiesDTO = dto  });
-                
-            }
-
-            list.Add(dto);
-            
-            return list;
-        }
-
         public void SaveChanges(Breeze.WebApi.SaveWorkState saveWorkState)
         {
            //get your custom saving logic here, for demo purposes this will be very simplistic...
